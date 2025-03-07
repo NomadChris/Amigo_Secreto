@@ -1,41 +1,82 @@
-Amigo Secreto
+Proyecto: Amigo Secreto
 
-Este es un proyecto web simple para realizar un sorteo de Amigo Secreto entre un grupo de amigos. Los usuarios pueden ingresar nombres de amigos, agregar esos nombres a una lista y luego realizar un sorteo aleatorio para asignar a cada amigo un "Amigo Secreto".
+Este proyecto es una implementación web del clásico juego "Amigo Secreto", donde los usuarios pueden agregar los nombres de sus amigos, realizar un sorteo para asignar el amigo secreto a cada participante y reiniciar el proceso si es necesario.
+Descripción
+
+La aplicación permite a los usuarios:
+
+    Ingresar los nombres de sus amigos.
+    Ver la lista de amigos añadidos.
+    Realizar un sorteo para asignar los amigos secretos.
+    Limpiar las listas de amigos y resultados cuando se desee reiniciar el proceso.
 
 Funcionalidades
 
-    Agregar Amigos: Los usuarios pueden ingresar los nombres de sus amigos en un campo de texto y añadirlos a una lista.
-    Sortear Amigos: Después de agregar los nombres, los usuarios pueden hacer clic en un botón para realizar el sorteo y asignar un "Amigo Secreto" a cada persona del grupo.
-    Mostrar Resultados: El sistema muestra los resultados del sorteo, indicando qué amigo le ha tocado a cada persona.
+    Agregar amigos: Los usuarios pueden agregar el nombre de sus amigos en un campo de texto. Si el campo está vacío y se intenta agregar, se muestra una alerta indicando que debe ingresar un nombre.
 
-Tecnologías
+    Sortear amigos secretos: Cuando los amigos estén añadidos, los usuarios pueden hacer clic en un botón para "Sortear amigo", lo cual asigna un amigo secreto aleatoriamente.
 
-    HTML: Estructura de la página web.
-    CSS: Estilo básico para la interfaz de usuario.
-    JavaScript: Lógica para manejar la adición de amigos y el sorteo aleatorio.
+    Reiniciar: Los usuarios pueden reiniciar el proceso, limpiando los registros y las listas de amigos y resultados. Si las listas ya están vacías, se muestra una alerta informando que no hay nada que reiniciar.
+
+Estructura de Archivos
+
+    index.html: Estructura HTML de la aplicación.
+    style.css: Estilos CSS para el diseño y la presentación.
+    app.js: Lógica JavaScript para la interacción con el usuario, como agregar amigos, realizar el sorteo y reiniciar el proceso.
+
+Instrucciones de Uso
+
+    Agregar amigos:
+        En el campo de texto, escribe el nombre de un amigo y haz clic en el botón "Añadir".
+        Los nombres añadidos se mostrarán en una lista debajo del campo de texto.
+
+    Sortear amigo secreto:
+        Una vez que hayas añadido amigos, haz clic en el botón "Sortear amigo".
+        Se asignará un amigo secreto a cada persona y se mostrará el resultado en la parte inferior.
+
+    Reiniciar:
+        Haz clic en el botón "Reiniciar" para borrar todos los registros de amigos y resultados.
+        Si intentas reiniciar sin haber agregado amigos, se mostrará una alerta indicando que no hay nada que reiniciar.
+
+Funciones Implementadas
+agregarAmigo()
+
+Función que permite agregar el nombre de un amigo a la lista, verificando si el campo de texto no está vacío.
+sortearAmigo()
+
+Función que asigna un amigo secreto a cada persona de la lista de amigos, sorteando aleatoriamente los nombres.
+reiniciar()
+
+Función que limpia el campo de texto, la lista de amigos y los resultados del sorteo. Incluye validación para asegurarse de que no se reinicie si no hay datos que borrar.
+Estilos
+
+    Los botones están diseñados con un estilo moderno y fácil de usar, con interacciones de hover.
+    El fondo y el texto son adecuados para asegurar una buena visibilidad en todo tipo de dispositivos.
+
+CSS Variables
+
+Se utilizan variables CSS para definir los colores principales y secundarios del proyecto, lo que facilita la personalización de la apariencia del sitio.
+Tecnologías Utilizadas
+
+    HTML: Para la estructura de la página.
+    CSS: Para los estilos visuales y el diseño.
+    JavaScript: Para la lógica y la interacción con el usuario.
+
 
 Requisitos
 
-Este proyecto es completamente funcional en un entorno moderno de navegador y no requiere ningún servidor o base de datos externo. Solo necesitas un navegador web para ejecutarlo localmente.
-Instrucciones de Uso
+Este proyecto no requiere ninguna instalación especial, ya que solo necesita un navegador moderno para ejecutarse.
+Cambios Realizados:
 
-    Agregar amigos: Escribe el nombre de un amigo en el campo de texto y haz clic en el botón "Añadir". El nombre se agregará a la lista de amigos.
-    Sortear amigos: Una vez que hayas agregado todos los amigos, haz clic en el botón "Sortear amigo" para realizar el sorteo. Los resultados del sorteo se mostrarán abajo.
-    Ver resultados: Los resultados mostrarán qué amigo le ha tocado a cada persona.
+    Validación de campo:
+        Se agregó una validación en el campo de texto de "Añadir amigo" para asegurarse de que no se pueda agregar un nombre vacío.
 
-Estructura del Proyecto
+    Función de reiniciar con confirmación:
+        Se implementó una validación para la función de reiniciar, asegurando que no se reinicie el formulario si no hay datos.
+        Al hacer clic en "Reiniciar", ahora el sistema preguntará si realmente desea reiniciar, y si no hay datos para reiniciar, se mostrará una alerta.
 
-amigo-secreto/
-│
-├── index.html       # Estructura HTML principal
-├── style.css        # Estilos CSS
-├── app.js           # Lógica JavaScript para agregar amigos y sortear
-└── assets/          # Carpeta con imágenes utilizadas en el proyecto
-    └── amigo-secreto.png
-    └── play_circle_outline.png
+    Botón de reiniciar:
+        Se añadió un nuevo botón de reiniciar al lado del botón de sorteo.
+        El botón tiene el mismo estilo que el de "Sortear", y ambos botones se encuentran alineados horizontalmente.
 
-Cómo Ejecutarlo Localmente
-
-    Clona el repositorio o descarga el proyecto.
-    Abre el archivo index.html en tu navegador web.
-    Interactúa con el formulario para agregar amigos y realizar el sorteo.
+Desarrollado por Christopher León.
